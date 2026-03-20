@@ -15,7 +15,6 @@ test("login and logout successful", async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.login("standard_user", "secret_sauce");
-  await loginPage.rememberMeCheckbox().click();
   await loginPage.submitLogin();
 
   await expect(page).toHaveURL("https://www.saucedemo.com/inventory.html");
